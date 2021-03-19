@@ -12,7 +12,7 @@ func TestFindNumbers(t *testing.T) {
 		get  []int
 		want int
 	}{
-		{"Check 3 evens", []int{23, 24, 45}, 3},
+		{"Check 3 evens", []int{23, 214, 45, 89}, 3},
 		{"Check 1 evens", []int{23, 243, 451}, 1},
 		{"Check 0 evens", []int{223, 243, 451}, 0},
 		{"Check 1 even", []int{2231}, 1},
@@ -20,6 +20,9 @@ func TestFindNumbers(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			require.Equal(t, test.want, findNumbers(test.get))
+		})
+		t.Run(test.name, func(t *testing.T) {
+			require.Equal(t, test.want, findNumbers2(test.get))
 		})
 	}
 }

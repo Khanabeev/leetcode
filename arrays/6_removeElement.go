@@ -14,13 +14,13 @@ func removeElement(nums []int, val int) int {
 
 // do not modify original array
 func findAndDelete(s []int, itemToDelete int) []int {
-	var new []int
+	newArr := []int{}
 	index := 0
 	for _, i := range s {
 		if i != itemToDelete {
-			new[index] = i
+			newArr[index] = i
 			index++
 		}
 	}
-	return new[:index]
+	return newArr[:index]
 }

@@ -5,14 +5,14 @@ func duplicateZeros1(arr []int) []int {
 
 	for i, num := range arr {
 		if num == 0 {
-			arr = insert1(arr, 0, i+1)
+			arr = insert(arr, 0, i+1)
 		}
 	}
 
 	return arr[:count]
 }
 
-func insert1(array []int, element int, i int) []int {
+func insert(array []int, element int, i int) []int {
 	return append(array[:i], append([]int{element}, array[i:]...)...)
 }
 

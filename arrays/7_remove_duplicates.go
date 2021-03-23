@@ -3,9 +3,28 @@ package arrays
 import "fmt"
 
 func removeDuplicates(nums []int) int {
-	n, d := RemoveDuplicates(nums)
-	fmt.Println(d)
-	return len(n)
+	//n, d := RemoveDuplicates(nums)
+	//fmt.Println(d)
+	//return len(n)
+	return RemoveDuplicates3(nums)
+}
+
+func RemoveDuplicates3(elements []int) int {
+	if len(elements) == 0 {
+		return 0
+	}
+
+	i := 0
+
+	for j:=1; j < len(elements); j++ {
+		if elements[i] != elements[j] {
+			i++
+			elements[i] = elements[j]
+		}
+
+	}
+	fmt.Println(elements)
+	return len(elements)
 }
 
 func RemoveDuplicates(s []int) ([]int, []int) {
